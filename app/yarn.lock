@@ -4111,10 +4111,10 @@ parent-module@^1.0.0:
   dependencies:
     callsites "^3.0.0"
 
-parse-duration@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/parse-duration/-/parse-duration-2.1.3.tgz#79a61a3ae224a5f4d1b71a8fa79e53d5aa90c902"
-  integrity sha512-MtbharL7Bets65qDBXuDOHHWyY1BxTJZmJ/xGmS90iEbKE0gZ6yZpZtCda7O79GeOi/f0NwBaplIuReExIoVsw==
+parse-duration@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/parse-duration/-/parse-duration-0.1.1.tgz#13114ddc9891c1ecd280036244554de43647a226"
+  integrity sha512-MPkERaX8suJ97HH2TtTN81ASYdFWouJqcnfVYSFHvWCI13vN4NzbvKsBOYN/7o8cTSoaNVMz4H8wG7GjTj0q6g==
 
 parse-json@^5.0.0:
   version "5.2.0"
