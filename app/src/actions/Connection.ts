@@ -1,15 +1,15 @@
-import * as q from '../../../backend/src/Model'
 import * as url from 'url'
+import { DataSourceState, MqttOptions } from 'mqtt-explorer-backend/src/DataSource/DataSource'
+import { Dispatch } from 'redux'
+import * as q from '../../../backend/src/Model'
 import { Action, ActionTypes } from '../reducers/Connection'
 import { ActionTypes as SettingsActionTypes } from '../reducers/Settings'
 import { AppState } from '../reducers'
-import { DataSourceState, MqttOptions } from '../../../backend/src/DataSource'
-import { Dispatch } from 'redux'
 import { globalActions } from '.'
 import { resetStore as resetTreeStore, showTree } from './Tree'
 import { showError } from './Global'
 import { TopicViewModel } from '../model/TopicViewModel'
-import { addMqttConnectionEvent, makeConnectionStateEvent, removeConnection, rendererEvents } from '../../../events'
+import { addMqttConnectionEvent, makeConnectionStateEvent, removeConnection, rendererEvents } from '../eventBus'
 
 export const connect =
   (options: MqttOptions, connectionId: string) => (dispatch: Dispatch<any>, getState: () => AppState) => {

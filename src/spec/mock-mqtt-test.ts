@@ -16,34 +16,33 @@ export async function createTestMock(): Promise<mqtt.MqttClient> {
     return mqttClient
   }
 
-  // Use MQTT_BROKER_HOST from environment, default to localhost
-  const brokerHost = process.env.MQTT_BROKER_HOST || '127.0.0.1'
-  const brokerPort = process.env.MQTT_BROKER_PORT || '1883'
+  // Use TESTS_MQTT_BROKER_HOST from environment, default to localhost
+  const brokerHost = process.env.TESTS_MQTT_BROKER_HOST || '127.0.0.1'
+  const brokerPort = process.env.TESTS_MQTT_BROKER_PORT || '1883'
   const brokerUrl = `mqtt://${brokerHost}:${brokerPort}`
 
   console.log(`Connecting to MQTT broker at ${brokerUrl}`)
 
   return new Promise((resolve, reject) => {
-    console.log('Connecting to MQTT broker at mqtt://127.0.0.1:1883...')
     const client = mqtt.connect(brokerUrl, {
       username: '',
       password: '',
       connectTimeout: 10000,
       reconnectPeriod: 0, // Disable reconnect in tests
     })
-    
+
     client.once('connect', () => {
       console.log('Successfully connected to MQTT broker')
       mqttClient = client
       console.log(`Connected to MQTT broker at ${brokerUrl}`)
       resolve(client)
     })
-    
-    client.once('error', (err) => {
+
+    client.once('error', err => {
       console.error('MQTT connection error:', err.message)
       reject(new Error(`Failed to connect to MQTT broker: ${err.message}`))
     })
-    
+
     // Timeout after 15 seconds
     setTimeout(() => {
       if (!mqttClient) {
