@@ -20,14 +20,16 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      - name: Persist Secrets to Agent Environment
-        run: |
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
-          echo "TESTS_MQTT_BROKER_HOST=localhost" >> $GITHUB_ENV
-          echo "TESTS_MQTT_BROKER_PORT=1883" >> $GITHUB_ENV
-
       - name: Checkout code
         uses: actions/checkout@v6
+
+      - name: Persist Secrets to Agent Environment
+        run: |
+          echo "export OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" > .env.llm-tests
+          echo "export RUN_LLM_TESTS=true" >> .env.llm-tests
+          chmod 600 .env.llm-tests
+          echo "✅ Created .env.llm-tests file"
+          ls -la .env.llm-tests
 
       - name: Install system dependencies
         run: |

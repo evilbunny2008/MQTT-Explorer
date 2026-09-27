@@ -121,7 +121,7 @@
     "builder-util-runtime": "9.3.1",
     "chai": "4.5.0",
     "cspell": "8.19.4",
-    "electron": "39.2.7",
+    "electron": "39.8.5",
     "electron-builder": "26.4.0",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
@@ -154,7 +154,7 @@
     "electron-log": "5.4.3",
     "electron-updater": "6.7.3",
     "express": "5.2.1",
-    "express-rate-limit": "8.2.1",
+    "express-rate-limit": "8.3.0",
     "express-validator": "7.3.1",
     "fs-extra": "11.3.3",
     "helmet": "8.1.0",
@@ -164,11 +164,11 @@
     "mime": "4.1.0",
     "mqtt": "5.14.1",
     "openai": "6.16.0",
-    "protobufjs": "8.0.0",
+    "protobufjs": "8.0.1",
     "sha1": "1.1.1",
     "socket.io": "4.8.1",
     "sparkplug-payload": "1.0.3",
-    "uuid": "11.0.0",
+    "uuid": "14.0.0",
     "yarn-run-all": "3.1.1"
   }
 }
